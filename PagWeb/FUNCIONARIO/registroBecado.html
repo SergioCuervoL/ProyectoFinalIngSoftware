@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Registro de Aspirante</title>
+    <title>Registro de Beca</title>
 
 </head>
 <body>
     <br><br>
     <div class="container">    
         <div class="alert alert-primary" role="alert">          
-            <center><h2>Registro de Nuevos Aspiranste</h2></center>
+            <center><h2>Registro de Beca</h2></center>
             <form>
                 <div class="form-group">
                     <label for="txtNombre">Nombres</label>
@@ -31,10 +31,18 @@
                     <input type="email" class="form-control" id="txtCorreo" placeholder="Ingrese su correo electronico">
                 </div>
                 <div class="form-group">
-                    <label for="txtContrasena">Ingrese su contraseña</label>
-                    <input type="password" class="form-control" id="txtContrasena" placeholder="Ingrese su contraseña">
+                    <label for="txtApellido">Id Aspirante a Registrar</label>
+                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese el id del aspirante">
                 </div>
-                <input type="button" value="Registrarse" onclick="registrar()">  
+                <div class="form-group">
+                    <label for="txtApellido">Id Proyecto del Aspirante</label>
+                    <input type="text" class="form-control" id="txtApellido" placeholder="Ingrese el id del proyecto que escogio el aspirante">
+                </div>
+                <div class="form-group">
+                    <label for="txtApellido">Key Secret</label>
+                    <input type="text" class="form-control" id="txtKeySecret" placeholder="Ingrese la llave secreta para el registro">
+                </div>
+                <input type="button" value="Registrar" onclick="registrar()">  
             </form>
         </div>
     </div>
