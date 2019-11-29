@@ -12,7 +12,7 @@ module.exports = app => {
         });
     });
 
-    app.post('/funcionario', (req, res) =>{
+    app.post('/registrarFuncionario', (req, res) =>{
         const {txtNombre, txtApellido, txtCorreo, txtContrasena, txtKeySecret} = req.body;
         if(txtKeySecret==7476){
             connection.query('INSERT INTO funcionario SET?', {
@@ -21,11 +21,17 @@ module.exports = app => {
                 correo: txtCorreo, 
                 contrasena: txtContrasena
             }, (err, result) => {
-                res.redirect('/');
+                if(err!=null){
+                    res.send('No se pudo registrar');
+                }
+                else{
+                    res.redirect('/');
+                }
+                
             });
         }
         else{
-            res.redirect('/');
+            res.send('La llave secreta no es admitida por el sistema');
         }
     });
 }

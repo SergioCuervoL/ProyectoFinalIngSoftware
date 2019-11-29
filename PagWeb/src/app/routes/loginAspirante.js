@@ -4,17 +4,17 @@ module.exports = app => {
     const connection = dbConnection();
     
     app.get('/', (req, res) =>{
-        connection.query('SELECT * FROM funcionario', (err, result)=>{
+        connection.query('SELECT * FROM aspirante', (err, result)=>{
             console.log(err);
-            res.render('FUNCIONARIO/loginFuncionario', {
-                funcionario: result
+            res.render('ASPIRANTE/loginAspirantes', {
+                aspirante: result
             });
         });
     });
 
-    app.post('/loginFuncionario', (req, res) =>{
+    app.post('/loginAspirante', (req, res) =>{
         const {txtCorreo, txtContrasena} = req.body;
-        connection.query('SELECT * FROM `funcionario` WHERE `correo`=\''+txtCorreo+'\' && `contrasena`=\''+txtContrasena+'\'', 
+        connection.query('SELECT * FROM `aspirante` WHERE `correo`=\''+txtCorreo+'\' && `contrasena`=\''+txtContrasena+'\'', 
         (err, result) => {
             if(result == ''){
                 console.log(result);
