@@ -1,6 +1,6 @@
 const app = require('./config/server');
 
-require('./app/routes/loginAspirante')(app);
+require('./app/routes/registrarProyectos')(app);
 
 //Inicializar servidor
 
